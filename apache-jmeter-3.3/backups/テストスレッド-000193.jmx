@@ -845,7 +845,9 @@ strJson.length() == 2;</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="cacheKey"></stringProp>
-          <stringProp name="script">// 文字列比較
+          <stringProp name="script">import jp.co.sample.SampleJar;
+
+// 文字列比較
 String result = prev.getResponseDataAsString();
 String assertionString = &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot; standalone=\&quot;yes\&quot;?&gt;&lt;shopModel&gt;&lt;shopId&gt;id0013&lt;/shopId&gt;&lt;shopName&gt;店舗名13&lt;/shopName&gt;&lt;/shopModel&gt;&quot;;
 
@@ -855,17 +857,8 @@ if(!result.equals(assertionString)){
 }
 
 // ファイルを読み込んでの文字列比較
-File file = new File(&quot;../bin/testResource/xml/shop.xml&quot;);
-BufferedReader b_reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),&quot;UTF-8&quot;));
-
-String s = &quot;&quot;;
-String assertionStr = &quot;&quot;;
-
-while((s = b_reader.readLine()) != null){
-    assertionStr = assertionStr + s.trim();
-}
-
-b_reader.close();
+SampleJar sampleJar = new SampleJar();
+String assertionStr = sampleJar.getXmlByString(&quot;../bin/testResource/xml/shop.xml&quot;);
 
 if(!result.equals(assertionStr)){	
 	AssertionResult.setFailureMessage(&quot;response:&quot; + result + &quot; / 予期値:&quot; + assertionStr );

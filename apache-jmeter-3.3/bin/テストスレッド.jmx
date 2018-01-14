@@ -817,7 +817,7 @@ strJson.length() == 2;</stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
         <XMLSchemaAssertion guiclass="XMLSchemaAssertionGUI" testclass="XMLSchemaAssertion" testname="XML Schema Assertion" enabled="true">
-          <stringProp name="xmlschema_assertion_filename">C:\Users\Rigel\Desktop\shop.xsd</stringProp>
+          <stringProp name="xmlschema_assertion_filename">../bin/testResource/xsd/shop.xsd</stringProp>
         </XMLSchemaAssertion>
         <hashTree/>
         <XMLAssertion guiclass="XMLAssertionGui" testclass="XMLAssertion" testname="XML アサーション" enabled="true"/>

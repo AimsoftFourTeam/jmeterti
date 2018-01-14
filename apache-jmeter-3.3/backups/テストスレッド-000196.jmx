@@ -817,7 +817,7 @@ strJson.length() == 2;</stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
         <XMLSchemaAssertion guiclass="XMLSchemaAssertionGUI" testclass="XMLSchemaAssertion" testname="XML Schema Assertion" enabled="true">
-          <stringProp name="xmlschema_assertion_filename">C:\Users\Rigel\Desktop\shop.xsd</stringProp>
+          <stringProp name="xmlschema_assertion_filename">../bin/testResource/xsd/shop.xs</stringProp>
         </XMLSchemaAssertion>
         <hashTree/>
         <XMLAssertion guiclass="XMLAssertionGui" testclass="XMLAssertion" testname="XML アサーション" enabled="true"/>
@@ -857,7 +857,8 @@ if(!result.equals(assertionString)){
 }
 
 // ファイルを読み込んでの文字列比較
-
+SampleJar sampleJar = new SampleJar();
+String assertionStr = sampleJar.getXmlByString(&quot;../bin/testResource/xml/shop.xml&quot;);
 
 if(!result.equals(assertionStr)){	
 	AssertionResult.setFailureMessage(&quot;response:&quot; + result + &quot; / 予期値:&quot; + assertionStr );
