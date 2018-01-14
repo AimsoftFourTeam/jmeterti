@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="shopModel">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="shopId" type="requiredType" />
+        <xsd:element name="shopName" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:simpleType name="requiredType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value=".+"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
